@@ -66,6 +66,12 @@ const updated = 'May 27, 2026';
       <p>
         Questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       </p>
+      <p>
+        {SITE.name}<br />
+        {SITE.address.line1}<br />
+        {SITE.address.line2}<br />
+        {SITE.address.city}, {SITE.address.region} {SITE.address.postalCode}
+      </p>
     </div>
   </section>
 </BaseLayout>

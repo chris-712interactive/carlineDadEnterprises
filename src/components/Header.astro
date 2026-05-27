@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
   <div class="container header__inner">
     <a href="/" class="header__logo">
       <span class="header__logo-mark" aria-hidden="true"></span>
-      <span>{SITE.shortName}</span>
+      <span>{SITE.name}</span>
     </a>
 
     <button
@@ -86,9 +86,11 @@ const currentPath = Astro.url.pathname;
     gap: 0.5rem;
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.125rem;
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    line-height: 1.2;
     color: var(--ink);
     text-decoration: none;
+    flex-shrink: 1;
   }
 
   .header__logo:hover {

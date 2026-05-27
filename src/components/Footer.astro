@@ -1,4 +1,5 @@
 ---
+import BusinessAddress from '@/components/BusinessAddress.astro';
 import { SITE } from '@/config/site';
 
 const year = new Date().getFullYear();
@@ -35,6 +36,7 @@ const year = new Date().getFullYear();
       <p>
         <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       </p>
+      <BusinessAddress class="footer__address" />
     </div>
   </div>
 
@@ -98,6 +100,12 @@ const year = new Date().getFullYear();
 
   .footer__links li {
     margin-bottom: 0.35rem;
+  }
+
+  .footer__address {
+    margin-top: var(--space-sm);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
   }
 
   .footer__bottom {

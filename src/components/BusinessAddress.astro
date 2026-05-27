@@ -1,0 +1,27 @@
+---
+import { SITE_ADDRESS_LINES } from '@/config/site';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<address class:list={['business-address', className]}>
+  {
+    SITE_ADDRESS_LINES.map((line) => (
+      <>
+        {line}
+        <br />
+      </>
+    ))
+  }
+</address>
+
+<style>
+  .business-address {
+    font-style: normal;
+    line-height: 1.6;
+  }
+</style>

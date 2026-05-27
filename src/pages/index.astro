@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProductCard from '@/components/ProductCard.astro';
 import ClientCard from '@/components/ClientCard.astro';
-import { SITE } from '@/config/site';
+import { SITE, SITE_POSTAL_ADDRESS } from '@/config/site';
 import { PRODUCTS } from '@/data/products';
 import { CLIENTS } from '@/data/clients';
 
@@ -13,6 +13,7 @@ const organizationJsonLd = {
   url: SITE.url,
   email: SITE.email,
   description: SITE.description,
+  address: SITE_POSTAL_ADDRESS,
 };
 ---
 
