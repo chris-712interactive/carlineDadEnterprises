@@ -1,0 +1,24 @@
+---
+import type { ClientProject } from '@/data/clients';
+
+interface Props {
+  client: ClientProject;
+}
+
+const { client } = Astro.props;
+---
+
+<a
+  href={client.href}
+  class="card"
+  style={`--card-accent: ${client.accent}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <span class="badge">Client website</span>
+  <h3>{client.name}</h3>
+  <p class="card__tagline">{client.tagline}</p>
+  <span class="card__meta">
+    Visit site <span aria-hidden="true">→</span>
+  </span>
+</a>

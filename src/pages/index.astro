@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import ProductCard from '@/components/ProductCard.astro';
+import ClientCard from '@/components/ClientCard.astro';
 import { SITE } from '@/config/site';
 import { PRODUCTS } from '@/data/products';
+import { CLIENTS } from '@/data/clients';
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
@@ -42,10 +44,10 @@ const organizationJsonLd = {
       <div class="bento" style="margin-top: var(--space-lg);">
         <a href="/teaching" class="card bento__featured callout--dark" style="--card-accent: var(--brand); color: inherit; text-decoration: none;">
           <span class="badge" style="background: rgba(56,182,255,0.2); color: var(--brand);">Teaching</span>
-          <h3 style="color: var(--paper); margin-top: 1rem;">Learn to code—without AI up front</h3>
+          <h3 style="color: var(--paper); margin-top: 1rem;">{SITE.skoolName}</h3>
           <p class="card__tagline" style="color: rgba(255,255,255,0.75);">
-            A Skool community focused on web development fundamentals so concepts stick
-            before you reach for automation.
+            Learn HTML and web development fundamentals in a free, beginner-friendly
+            community—no experience needed.
           </p>
           <span class="card__meta">Explore teaching →</span>
         </a>
@@ -54,6 +56,23 @@ const organizationJsonLd = {
           <ProductCard product={product} />
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <h2>Client work</h2>
+      <p class="lead">
+        Websites for schools and organizations in Southwest Florida and beyond.
+      </p>
+      <div class="product-grid" style="margin-top: var(--space-lg);">
+        {CLIENTS.map((client) => (
+          <ClientCard client={client} />
+        ))}
+      </div>
+      <p style="margin-top: var(--space-md);">
+        <a href="/work">View all client work →</a>
+      </p>
     </div>
   </section>
 

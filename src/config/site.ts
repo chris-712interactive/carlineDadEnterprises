@@ -6,7 +6,7 @@ export const SITE = {
   description:
     'Carline Dad Enterprises builds software products and teaches web development fundamentals—before the shortcuts.',
   tagline: 'Products, code, and teaching—under one roof.',
-  // Update these when you have final values:
   email: 'hello@thecarlinedad.com',
-  skoolUrl: 'https://www.skool.com', // TODO: replace with your community URL
+  skoolUrl: 'https://www.skool.com/carline-dad-codes-1146',
+  skoolName: 'Carline Dad Codes',
 } as const;

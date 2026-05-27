@@ -1,0 +1,64 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ClientCard from '@/components/ClientCard.astro';
+import { CLIENTS } from '@/data/clients';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="Client Work"
+  description={`School and organization websites built by ${SITE.name}.`}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>Client work</h1>
+      <p class="lead">
+        Websites for schools and organizations we partner with—clear information for
+        families, admissions, and community outreach.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="product-grid">
+        {CLIENTS.map((client) => (
+          <ClientCard client={client} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose">
+      {CLIENTS.map((client) => (
+        <article class="client-detail" id={client.slug}>
+          <h2>{client.name}</h2>
+          <p class="text-secondary">{client.location}</p>
+          <p>{client.description}</p>
+          <a
+            href={client.href}
+            class="btn btn--primary"
+            style="margin-top: var(--space-md);"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit {client.name} →
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .client-detail {
+    padding-block: var(--space-lg);
+    border-bottom: 1px solid var(--muted-border);
+    max-width: 52ch;
+  }
+
+  .client-detail:last-child {
+    border-bottom: none;
+  }
+</style>
