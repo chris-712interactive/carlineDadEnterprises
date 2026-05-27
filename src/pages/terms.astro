@@ -1,0 +1,71 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+
+const updated = 'May 27, 2026';
+---
+
+<BaseLayout
+  title="Terms of Service"
+  description={`Terms of service for ${SITE.name} website at ${SITE.domain}.`}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>Terms of Service</h1>
+      <p class="lead text-secondary">Last updated: {updated}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container prose">
+      <p>
+        By accessing {SITE.url}, you agree to these Terms of Service. If you do not agree,
+        please do not use this website.
+      </p>
+
+      <h2>Use of this website</h2>
+      <p>
+        This site provides information about {SITE.name}, our products, and our teaching
+        community. You may use it for lawful purposes only. You may not attempt to disrupt,
+        scrape, or misuse the site or its content.
+      </p>
+
+      <h2>Products and third-party services</h2>
+      <p>
+        Links to our products and external communities (such as Skool) are provided for
+        convenience. Each product and platform has its own terms, privacy policy, and billing
+        rules. Your use of those services is governed by their respective agreements—not
+        these website terms alone.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        Content on this site—including text, branding, and design—is owned by {SITE.name} or
+        its licensors and may not be copied or redistributed without permission.
+      </p>
+
+      <h2>Disclaimer</h2>
+      <p>
+        This website and its content are provided "as is" without warranties of any kind. We
+        do not guarantee uninterrupted or error-free access.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, {SITE.name} shall not be liable for any
+        indirect, incidental, or consequential damages arising from your use of this website.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update these terms from time to time. Continued use of the site after changes
+        constitutes acceptance of the updated terms.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

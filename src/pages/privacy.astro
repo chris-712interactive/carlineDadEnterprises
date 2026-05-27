@@ -1,0 +1,78 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+
+const updated = 'May 27, 2026';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description={`Privacy policy for ${SITE.name} and ${SITE.domain}.`}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="lead text-secondary">Last updated: {updated}</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container prose">
+      <p>
+        {SITE.name} ("we," "us," or "our") operates {SITE.url}. This policy explains how we
+        collect, use, and protect information when you visit this website or contact us.
+      </p>
+
+      <h2>Information we collect</h2>
+      <ul>
+        <li>
+          <strong>Contact information:</strong> If you email us or submit a contact form, we
+          receive your name, email address, and message content.
+        </li>
+        <li>
+          <strong>Usage data:</strong> Our hosting provider may collect standard server logs
+          (IP address, browser type, pages visited) for security and performance.
+        </li>
+      </ul>
+
+      <h2>How we use information</h2>
+      <ul>
+        <li>Respond to your inquiries and provide support</li>
+        <li>Operate and improve this website</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+
+      <h2>Product-specific services</h2>
+      <p>
+        Our individual products (such as Clean Scheduler) have their own privacy policies
+        and data practices on their respective websites. Please review those policies when
+        using those services.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        This marketing site does not use advertising cookies. Third-party services we use
+        (such as form providers or hosting) may set essential cookies as part of their
+        operation.
+      </p>
+
+      <h2>Data retention</h2>
+      <p>
+        We retain contact correspondence as long as needed to respond to you and for
+        reasonable business record-keeping, unless a longer period is required by law.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Depending on your location, you may have rights to access, correct, or delete personal
+        information we hold about you. Contact us at{' '}
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a> to make a request.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

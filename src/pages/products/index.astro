@@ -1,0 +1,81 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import { PRODUCTS } from '@/data/products';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="Products"
+  description={`Software products built by ${SITE.name}—from cleaning business ops to family apps and reseller tools.`}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>Products</h1>
+      <p class="lead">
+        Real tools for real problems. Each product has its own site and roadmap—we build,
+        ship, and iterate.
+      </p>
+    </div>
+  </header>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="product-grid">
+        {PRODUCTS.map((product) => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {PRODUCTS.map((product) => (
+        <article class="product-detail" id={product.slug}>
+          <div class="product-detail__header">
+            <span class="badge" style={`background: ${product.accent}22; color: ${product.accent}`}>
+              {product.category}
+            </span>
+            <h2>{product.name}</h2>
+            <p class="lead">{product.description}</p>
+            <p class="text-secondary">
+              <strong>Built for:</strong> {product.audience}
+            </p>
+          </div>
+          <ul class="bullet-list">
+            {product.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+          {
+            product.href ? (
+              <a href={product.href} class="btn btn--primary" style="margin-top: var(--space-md);" target="_blank" rel="noopener noreferrer">
+                Visit {product.name} →
+              </a>
+            ) : (
+              <p class="text-secondary" style="margin-top: var(--space-md);">
+                Not publicly launched yet—check back soon or <a href="/contact">get in touch</a>.
+              </p>
+            )
+          }
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .product-detail {
+    padding-block: var(--space-lg);
+    border-bottom: 1px solid var(--muted-border);
+  }
+
+  .product-detail:last-child {
+    border-bottom: none;
+  }
+
+  .product-detail__header {
+    max-width: 52ch;
+  }
+</style>

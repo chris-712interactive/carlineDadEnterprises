@@ -1,0 +1,39 @@
+---
+import type { Product } from '@/data/products';
+import { STATUS_LABELS } from '@/data/products';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const isLink = Boolean(product.href);
+const Tag = isLink ? 'a' : 'div';
+const badgeClass =
+  product.status === 'live'
+    ? 'badge--live'
+    : product.status === 'beta'
+      ? 'badge--beta'
+      : 'badge--planned';
+---
+
+<Tag
+  href={isLink ? product.href! : undefined}
+  class:list={['card', { 'card--static': !isLink }]}
+  style={`--card-accent: ${product.accent}`}
+>
+  <span class:list={['badge', badgeClass]}>{STATUS_LABELS[product.status]}</span>
+  <h3>{product.name}</h3>
+  <p class="card__tagline">{product.tagline}</p>
+  {
+    isLink ? (
+      <span class="card__meta">
+        Visit site <span aria-hidden="true">→</span>
+      </span>
+    ) : (
+      <span class="card__meta text-secondary" style="color: var(--text-tertiary);">
+        {STATUS_LABELS[product.status]}
+      </span>
+    )
+  }
+</Tag>

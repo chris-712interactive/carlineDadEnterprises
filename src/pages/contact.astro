@@ -1,0 +1,67 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContactForm from '@/components/ContactForm.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description={`Contact ${SITE.name} for product questions, teaching inquiries, or business partnerships.`}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>Contact</h1>
+      <p class="lead">
+        Reach out for product support, teaching questions, or business inquiries. We typically
+        respond within a few business days.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <h2>Email</h2>
+          <p>
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          </p>
+
+          <h2 style="margin-top: var(--space-lg);">Business</h2>
+          <p class="text-secondary">
+            {SITE.name}<br />
+            <a href={SITE.url}>{SITE.domain}</a>
+          </p>
+
+          <h2 style="margin-top: var(--space-lg);">Product support</h2>
+          <p class="text-secondary">
+            For Clean Scheduler, visit{' '}
+            <a href="https://cleanscheduler.com/contact" target="_blank" rel="noopener noreferrer">
+              cleanscheduler.com/contact
+            </a>
+            .
+          </p>
+        </div>
+
+        <div>
+          <h2>Send a message</h2>
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+  }
+</style>

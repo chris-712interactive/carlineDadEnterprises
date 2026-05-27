@@ -1,0 +1,113 @@
+---
+import { SITE } from '@/config/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="/" class="footer__logo">{SITE.name}</a>
+      <p class="footer__tagline">{SITE.tagline}</p>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">Explore</h2>
+      <ul class="footer__links">
+        <li><a href="/products">Products</a></li>
+        <li><a href="/teaching">Teaching</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">Legal</h2>
+      <ul class="footer__links">
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer__heading">Connect</h2>
+      <p>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>&copy; {year} {SITE.name}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--ink);
+    color: rgba(255, 255, 255, 0.85);
+    padding-block: var(--space-xl) var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .footer a {
+    color: var(--brand);
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 768px) {
+    .footer__grid {
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+    }
+  }
+
+  .footer__logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--paper);
+    text-decoration: none;
+  }
+
+  .footer__tagline {
+    margin-top: var(--space-xs);
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 28ch;
+  }
+
+  .footer__heading {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer__links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer__links li {
+    margin-bottom: 0.35rem;
+  }
+
+  .footer__bottom {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .footer__bottom p {
+    margin: 0;
+  }
+</style>

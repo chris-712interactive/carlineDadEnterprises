@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="About"
+  description={`About ${SITE.name}—software products, teaching, and practical code for real businesses.`}
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>About</h1>
+      <p class="lead">
+        {SITE.name} is a small software studio that does a little bit of everything in code—products,
+        education, and tools that solve everyday problems.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container prose">
+      <h2>What we build</h2>
+      <p>
+        From operations software for cleaning businesses to family-focused apps and reseller
+        research tools, we ship products that matter to the people who use them every day.
+      </p>
+
+      <h2>What we teach</h2>
+      <p>
+        Through our Skool community, we help people learn web development with a
+        fundamentals-first mindset—so they can build confidently and use AI as a tool, not a
+        crutch.
+      </p>
+
+      <h2>How we work</h2>
+      <p>
+        Each product runs on its own stack and domain. This site is the umbrella: who we are,
+        what we make, and how to reach us. For product-specific support, visit the product's
+        website directly.
+      </p>
+
+      <p>
+        <a href="/products">See our products</a> · <a href="/contact">Get in touch</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

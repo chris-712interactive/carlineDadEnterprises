@@ -1,0 +1,54 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { SITE } from '@/config/site';
+---
+
+<BaseLayout
+  title="Teaching"
+  description="Learn web development fundamentals in a Skool community—before reaching for AI shortcuts."
+>
+  <header class="page-header">
+    <div class="container">
+      <h1>Teaching</h1>
+      <p class="lead">
+        Web development taught the right way: understand HTML, CSS, and JavaScript deeply
+        before you lean on AI to write code for you.
+      </p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="callout callout--dark">
+        <h2>Skool community</h2>
+        <p class="lead">
+          Join developers and learners who want real skills—not copy-paste prompts. We focus
+          on fundamentals, projects, and accountability.
+        </p>
+        <ul class="bullet-list" style="margin-top: var(--space-md);">
+          <li style="color: rgba(255,255,255,0.8);">HTML, CSS, and JavaScript from the ground up</li>
+          <li style="color: rgba(255,255,255,0.8);">Build projects without AI doing the thinking for you</li>
+          <li style="color: rgba(255,255,255,0.8);">Community support and structured learning paths</li>
+        </ul>
+        <a
+          href={SITE.skoolUrl}
+          class="btn btn--primary"
+          style="margin-top: var(--space-md);"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Join on Skool →
+        </a>
+      </div>
+
+      <div style="margin-top: var(--space-xl); max-width: 52ch;">
+        <h2>Why fundamentals first?</h2>
+        <p>
+          AI is a powerful assistant—but if you cannot read and reason about code, you cannot
+          debug, ship, or own what you build. Our approach is intentional: learn how the web
+          works, then use every tool (including AI) from a place of understanding.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

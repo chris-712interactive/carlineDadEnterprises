@@ -1,0 +1,16 @@
+{
+  "name": "Carline Dad Enterprises",
+  "short_name": "Carline Dad",
+  "description": "Products, code, and teaching—under one roof.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#38b6ff",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

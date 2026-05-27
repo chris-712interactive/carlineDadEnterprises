@@ -1,0 +1,85 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProductCard from '@/components/ProductCard.astro';
+import { SITE } from '@/config/site';
+import { PRODUCTS } from '@/data/products';
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.name,
+  url: SITE.url,
+  email: SITE.email,
+  description: SITE.description,
+};
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="container">
+      <p class="hero__eyebrow">
+        <span class="hero__accent">Products</span> · Teaching · Code
+      </p>
+      <h1>Build software. Teach fundamentals.</h1>
+      <p class="lead">
+        {SITE.description}
+      </p>
+      <div class="hero__actions">
+        <a href="/products" class="btn btn--primary">View products</a>
+        <a href="/teaching" class="btn btn--secondary">Join the community</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>What we do</h2>
+      <p class="lead">
+        Carline Dad Enterprises is a home for problem-solving software and hands-on
+        web development education—learn the craft before the shortcuts.
+      </p>
+
+      <div class="bento" style="margin-top: var(--space-lg);">
+        <a href="/teaching" class="card bento__featured callout--dark" style="--card-accent: var(--brand); color: inherit; text-decoration: none;">
+          <span class="badge" style="background: rgba(56,182,255,0.2); color: var(--brand);">Teaching</span>
+          <h3 style="color: var(--paper); margin-top: 1rem;">Learn to code—without AI up front</h3>
+          <p class="card__tagline" style="color: rgba(255,255,255,0.75);">
+            A Skool community focused on web development fundamentals so concepts stick
+            before you reach for automation.
+          </p>
+          <span class="card__meta">Explore teaching →</span>
+        </a>
+
+        {PRODUCTS.map((product) => (
+          <ProductCard product={product} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="background: var(--muted);">
+    <div class="container text-center">
+      <h2>Ready to connect?</h2>
+      <p class="lead" style="margin-inline: auto;">
+        Questions about our products, teaching, or partnerships—we'd love to hear from you.
+      </p>
+      <a href="/contact" class="btn btn--primary" style="margin-top: var(--space-md);">
+        Contact us
+      </a>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+</BaseLayout>
+
+<style>
+  .hero__eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--space-sm);
+  }
+</style>
